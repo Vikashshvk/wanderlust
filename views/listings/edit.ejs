@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>  
+<body>
+    <div class="row">
+        <div class="col-8 offset-2"> 
+            <br><br>
+            <h3> Edit Listing</h3>
+            <form   method="POST" action="/listings/<%=newListing.id%>?_method=put" novalidate class="needs-validation" >
+               <div>
+                 <label for="title">Title</label> 
+                <input class="form-control" name="listing[title]" type="text" value="<%=newListing.title %>" placeholder="title" required />
+                <div class="valid-feedback" >Title looks good!</div>  
+                <div class="invalid-feedback" >Please enter title!</div> 
+            </div>
+                <br>
+                <div>
+                    <label for="dscription">Description</label>
+                <textarea class="form-control" name="listing[description]" placeholder="description" required ><%=newListing.description %></textarea>
+                <div class="invalid-feedback">Please enter short description!</div>    
+            </div>
+                <br>
+                <div>
+                    <label for="image">Link</label>
+                <input class="form-control" name="listing[image]" type="text" value="<%= newListing.image.url %>" required placeholder="enter url">
+             <div class="invalid-feedback">Please enter image link! ></div>    
+            </div>
+                <br>
+                <div>
+                    <label for="Price"></label>
+                <input class="form-control" name="listing[price]" type="number" value="<%= newListing.price %>" required  placeholder="price">
+              <div class="invalid-feedback" >Price should be valid!</div>    
+            </div>
+                <br>
+                <div>
+                    <label for="country">Country</label>
+                <input class="form-control" name="listing[country]" type="text" value="<%= newListing.country %>" required placeholder="country">
+                <div class="invalid-feedback" >Country should be valid!</div>    
+            </div>
+                <br>
+                <div>
+                    <label for="location">Location</label>
+                <input class="form-control" name="listing[location]" type="text" value="<%= newListing.location%>" required placeholder="location">
+               <div class="invalid-feedback" >Location should be valid!</div>
+    
+            </div>
+                <br>
+                <button  style="color: white;" class="btn add-btn" type="submit">Submit</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
+    
+</body>
+ 

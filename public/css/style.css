@@ -99,6 +99,7 @@ footer{
    height: 30vh;
 }
 
-footer{
-    
+#map{
+    height:400px;
+    width: 80vh;
 }
